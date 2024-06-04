@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { searchBooksByTitle } from '../services/bookService';
+import { searchBooksByTitle } from '../services/bookService'; // Ensure you have a service for fetching books
 import BookSearch from './BookSearch';
 import AuthorDetails from './AuthorDetails';
 
