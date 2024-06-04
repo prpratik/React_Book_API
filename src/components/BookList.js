@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { searchBooksByTitle } from '../services/bookService'; // Ensure you have a service for fetching books
+import { searchBooksByTitle } from '../services/bookService';
 import BookSearch from './BookSearch';
 import AuthorDetails from './AuthorDetails';
 
@@ -10,9 +10,14 @@ const BookList = () => {
 
   const fetchBooks = async (title = '') => {
     setLoading(true);
-    const data = await searchBooksByTitle(title);
-    setBooks(data.docs);
-    setLoading(false);
+    try {
+      const data = await searchBooksByTitle(title);
+      setBooks(data.docs);
+    } catch (error) {
+      console.error('Error fetching books:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
