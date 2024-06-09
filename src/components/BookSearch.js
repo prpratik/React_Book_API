@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
+import '../styles/BookSearch.css'; // Import the CSS file
 
 const BookSearch = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = () => {
-    onSearch(query);
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(searchTerm);
+    }
   };
 
   return (
-    <div className="mb-4">
+    <div className="book-search-container flex">
       <input
         type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search for books"
-        className="border p-2 rounded"
+        className="book-search-input flex-grow"
+        placeholder="Search by title..."
+        value={searchTerm}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
-      <button onClick={handleSearch} className="ml-2 p-2 bg-blue-500 text-white rounded">
+      <button
+        className="book-search-button ml-2"
+        onClick={() => onSearch(searchTerm)}
+      >
         Search
       </button>
     </div>

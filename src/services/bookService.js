@@ -1,27 +1,25 @@
-const API_BASE_URL = 'https://openlibrary.org';
+import axios from 'axios';
+
+const API_URL = 'https://openlibrary.org';
 
 export const searchBooksByTitle = async (title) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/search.json?title=${title}`);
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
-    return await response.json();
+    const response = await axios.get(`${API_URL}/search.json`, {
+      params: { title },
+    });
+    return response.data;
   } catch (error) {
-    console.error("Error fetching books by title:", error);
-    throw error;
+    console.error('Error fetching books by title:', error);
+    return { docs: [] };
   }
 };
 
 export const fetchAuthorDetails = async (authorKey) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/authors/${authorKey}.json`);
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
-    return await response.json();
+    const response = await axios.get(`${API_URL}/authors/${authorKey}.json`);
+    return response.data;
   } catch (error) {
-    console.error("Error fetching author details:", error);
-    throw error;
+    console.error('Error fetching author details:', error);
+    return null;
   }
 };

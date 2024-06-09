@@ -1,0 +1,40 @@
+/* BookSearch.css */
+
+.book-search-container {
+  max-width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.book-search-input {
+  width: calc(100% - 80px);
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.book-search-button {
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #3182ce;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.book-search-button:hover{
+  background-color: #1f78cc;
+}
+
+@media (max-width: 640px) {
+  .book-search-input {
+    width: calc(100% - 60px);
+  }
+
+  .book-search-button {
+    width: 60px;
+  }
+}
