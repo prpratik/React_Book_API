@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchAuthorDetails } from '../services/bookService';
-import '../styles/AuthorDetails.css'; // Import the CSS file
+import '../styles/AuthorDetails.css'; 
 
 const AuthorDetails = ({ authorKey }) => {
   const [author, setAuthor] = useState(null);

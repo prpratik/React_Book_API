@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { searchBooksByTitle } from '../services/bookService';
 import BookSearch from './BookSearch';
 import AuthorDetails from './AuthorDetails';
-import '../styles/BookList.css'; // Import the CSS file
+import '../styles/BookList.css';
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -15,7 +15,7 @@ const BookList = () => {
     const data = await searchBooksByTitle(title);
     setBooks(data.docs);
     setLoading(false);
-    setShowAuthorDetails(false); // Ensure book list is shown when a new search is made
+    setShowAuthorDetails(false); 
   };
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const BookList = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="book-list-header">Book List</div> {/* Apply the header styles */}
+      <div className="book-list-header">Book List</div> {}
       <BookSearch onSearch={fetchBooks} />
       {loading ? (
         <p className="text-center text-xl">Loading...</p>
