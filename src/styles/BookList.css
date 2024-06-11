@@ -1,12 +1,51 @@
+/* BookList.css */
 
-
-.book-list-container {
+.book-list-header {
+  background-color: #3182ce;
+  color: #ffffff;
   padding: 1rem;
-  max-width: 64rem;
-  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
-.book-list-item {
+.book-list-header:hover {
+  cursor: pointer;
+  background-color: #1573cc;
+}
+
+.sort-button {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background-color: #1e70bb;
+}
+
+.filter-input {
+  /* margin-top: 5px; */
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  padding: 5px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.book-item {
+  margin-left: 5px;
+  margin-right: 5px;
   border: 1px solid #d1d5db;
   padding: 1rem;
   border-radius: 0.375rem;
@@ -45,23 +84,41 @@
 }
 
 .back-button:hover {
-  background-color: #2563eb;
+  background-color: #1e70bb;
 }
 
-/* BookList.css */
-
-.book-list-header {
-  background-color: #3182ce; 
-  color: #ffffff; 
-  padding: 1rem; 
-  text-align: center; 
-  font-size: 2rem; 
-  font-weight: bold; 
-  margin-bottom: 1.5rem; 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 5px;
 }
 
-.book-list-header:hover {
-  cursor: pointer; 
-  background-color: #1573cc;
+.pagination-controls {
+  display: flex;
+  align-items: center;
 }
 
+.pagination-button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  background-color: #f3f4f6;
+}
+
+.pagination-button.active {
+  background-color: #3182ce;
+  color: #fff;
+  border-color: #3182ce;
+}
+
+.pagination-button:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
