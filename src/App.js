@@ -1,6 +1,6 @@
 import React from 'react';
 import BookList from './components/BookList';
-import './index.css'; // Ensure TailwindCSS is included
+import './index.css'; 
 
 const App = () => {
   return (
