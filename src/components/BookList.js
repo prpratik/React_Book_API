@@ -99,7 +99,9 @@ const BookList = () => {
       <div className="book-list-header">Book List</div>
       <BookSearch onSearch={fetchBooks} />
       {loading ? (
-        <p className="text-center text-xl">Loading...</p>
+        <div className="book-list-loading">
+          <div className="loader"></div>
+        </div>
       ) : showAuthorDetails ? (
         <div className="author-details-container">
           <button onClick={handleBackClick} className="back-button">
